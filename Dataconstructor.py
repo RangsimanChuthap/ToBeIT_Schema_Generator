@@ -53,7 +53,7 @@ try:
             writer.writerow(["usernane", "firstname", "lastname"])
 
             header = regis_data.readline().strip().split(",")
-               
+
             nameindex = [None,None]
             validnamedict = {0: ["firstname", "name", "ชื่อ", "ชื่อจริง"],
                             1: ["lastname", "สกุล", "นามสกุล", "surname"]}
