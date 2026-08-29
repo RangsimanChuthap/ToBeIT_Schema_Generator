@@ -53,6 +53,7 @@ try:
             writer.writerow(["usernane", "firstname", "lastname"])
 
             header = regis_data.readline().strip().split(",")
+            
             nameindex = [None,None]
             validnamedict = {0: ["firstname", "name", "ชื่อ", "ชื่อจริง"],
                             1: ["lastname", "สกุล", "นามสกุล", "surname"]}
@@ -62,7 +63,8 @@ try:
                 for key, value in validnamedict.items():
                     for reftable in value:
                         if itemhead == reftable:
-                            nameindex[key] = index
+                            nameindex[key] = index if not nameindex[key] else \
+                            print("DUPLICATE KEY DETECTED, COULD NOT GENERATE SCHEMA")
 
             if None in nameindex:
                 print("Name or last name field DIDN'T FOUND, COULD NOT GENERATE SCHEMA")
